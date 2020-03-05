@@ -2,7 +2,7 @@ import csv
 import matplotlib.pyplot as plt
 import numpy as np
 
-triangles = np.array([[int(j) for j in i] for i in csv.reader(open('triangles.txt'))])
+triangles = np.array([[int(j) for j in i] for i in csv.reader(open('p102_triangles.txt'))])
 count = 0
 
 

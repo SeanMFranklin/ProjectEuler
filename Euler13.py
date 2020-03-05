@@ -1,11 +1,4 @@
-text = str(open("Euler13.txt", "rb").read())
-x = []
-y = 0
-with open("Euler13.txt", "rb") as f:
-    x = (f.read().splitlines())
-print(x[1])
-print(int(x[1]))
-for i in x:
-	y+=int(i)
-y=str(y)
-print(str(y[0:10]))
+"""Work out the first ten digits of the sum of the following one-hundred 50-digit numbers."""
+
+nums = [int(i) for i in open("Euler13.txt", "rb")]
+print(str(sum(nums))[:10])

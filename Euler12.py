@@ -1,5 +1,4 @@
 import math
-global high
 high = 0
 triangle = 1
 k = 1
