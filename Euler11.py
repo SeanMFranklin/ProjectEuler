@@ -50,14 +50,14 @@ for i in range(17):
 			big = x[i][j]*x[i+1][j+1]*x[i+2][j+2]*x[i+3][j+3]
 			row = i
 			col = j
-			des = 'Diaganol down'
+			des = 'Diagonal down'
 for i in range(3,20):
 	for j in range(17):
 		if x[i][j]*x[i-1][j+1]*x[i-2][j+2]*x[i-3][j+3] > big:
 			big = x[i][j]*x[i-1][j+1]*x[i-2][j+2]*x[i-3][j+3]
 			row = i
 			col = j
-			des = 'Diaganol up'
+			des = 'Diagonal up'
 print("\nBiggest = " + str(big))
 print("Row = " + str(row))
 print("Col = " + str(col))
