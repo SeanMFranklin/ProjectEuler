@@ -15,13 +15,13 @@ for triangle in triangles:
     crosses = cross(A, B), cross(B, C), cross(C, A)
     if all(cross > 0 for cross in crosses) or all(cross < 0 for cross in crosses):
         count += 1
-    #     print(f"Inside")
-    # else:
-    #     print("Outside")
-    # X = np.append(triangle[::2], triangle[0])
-    # Y = np.append(triangle[1::2], triangle[1])
-    # plt.plot(X,Y)
-    # plt.scatter(0,0)
-    # plt.show()
+        print(f"Inside")
+    else:
+        print("Outside")
+    X = np.append(triangle[::2], triangle[0])
+    Y = np.append(triangle[1::2], triangle[1])
+    plt.plot(X,Y)
+    plt.scatter(0,0)
+    plt.show()
 
 print(count)
