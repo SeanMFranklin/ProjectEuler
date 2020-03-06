@@ -10,13 +10,13 @@ Find S(1016)."""
 from math import factorial as fact
 
 def nCr(n,m):
-    return int((fact(n)/(fact(m)*fact(n-m))))
+    return (fact(n)//(fact(m)*fact(n-m)))
 
 def g(n,m):
     a = nCr(n,m)
     res = 0
     while a % 2 == 0:
-        a /= 2
+        a //= 2
         res += 1
     # print(a,res, nCr(n,m))
     return res
@@ -34,4 +34,4 @@ print(nCr(12,5))
 print(g(12,5))
 print(F(10))
 print(F(100))
-print(S(100))
+print(S(10000))
