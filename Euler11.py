@@ -1,4 +1,4 @@
-x= [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+x = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
 x[0] = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08".split()
 x[1] = "49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00".split()
 x[2] = "81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65".split()
@@ -26,38 +26,38 @@ row = 0
 col = 0
 des = ''
 for i in range(20):
-	for j in range(20):
-		x[i][j] = int(x[i][j])
+    for j in range(20):
+        x[i][j] = int(x[i][j])
 
 for i in range(20):
-	for j in range(17):
-		if x[i][j]*x[i][j+1]*x[i][j+2]*x[i][j+3] > big:
-			big = x[i][j]*x[i][j+1]*x[i][j+2]*x[i][j+3]
-			row = i
-			col = j
-			des = 'Vertical'
+    for j in range(17):
+        if x[i][j]*x[i][j+1]*x[i][j+2]*x[i][j+3] > big:
+            big = x[i][j]*x[i][j+1]*x[i][j+2]*x[i][j+3]
+            row = i
+            col = j
+            des = 'Vertical'
 for i in range(17):
-	for j in range(20):
-		if x[i][j]*x[i+1][j]*x[i+2][j]*x[i+3][j] > big:
-			big = x[i][j]*x[i+1][j]*x[i+2][j]*x[i+3][j]
-			row = i
-			col = j
-			des = 'Horizontal'
+    for j in range(20):
+        if x[i][j]*x[i+1][j]*x[i+2][j]*x[i+3][j] > big:
+            big = x[i][j]*x[i+1][j]*x[i+2][j]*x[i+3][j]
+            row = i
+            col = j
+            des = 'Horizontal'
 
 for i in range(17):
-	for j in range(17):
-		if x[i][j]*x[i+1][j+1]*x[i+2][j+2]*x[i+3][j+3] > big:
-			big = x[i][j]*x[i+1][j+1]*x[i+2][j+2]*x[i+3][j+3]
-			row = i
-			col = j
-			des = 'Diagonal down'
-for i in range(3,20):
-	for j in range(17):
-		if x[i][j]*x[i-1][j+1]*x[i-2][j+2]*x[i-3][j+3] > big:
-			big = x[i][j]*x[i-1][j+1]*x[i-2][j+2]*x[i-3][j+3]
-			row = i
-			col = j
-			des = 'Diagonal up'
+    for j in range(17):
+        if x[i][j]*x[i+1][j+1]*x[i+2][j+2]*x[i+3][j+3] > big:
+            big = x[i][j]*x[i+1][j+1]*x[i+2][j+2]*x[i+3][j+3]
+            row = i
+            col = j
+            des = 'Diagonal down'
+for i in range(3, 20):
+    for j in range(17):
+        if x[i][j]*x[i-1][j+1]*x[i-2][j+2]*x[i-3][j+3] > big:
+            big = x[i][j]*x[i-1][j+1]*x[i-2][j+2]*x[i-3][j+3]
+            row = i
+            col = j
+            des = 'Diagonal up'
 print("\nBiggest = " + str(big))
 print("Row = " + str(row))
 print("Col = " + str(col))

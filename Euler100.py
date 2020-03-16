@@ -8,9 +8,11 @@ is a box containing eighty-five blue discs and thirty-five red discs.
 By finding the first arrangement to contain over 1012 = 1,000,000,000,000 discs in total,
 determine the number of blue discs that the box would contain.
 """
+from decimal import *
+getcontext().prec = 50
 s = 1000000000000
-n = .5 * ((2*s**2 - 2*s + 1)**.5 + 1)
-while not n.is_integer():
+n = .5 * ((2*s**2 - 2*s + Decimal(1))**.5 + 1)
+while not n  :
     s += 1
     n = .5 * ((2*s**2 - 2*s + 1)**.5 + 1)
 print(n)

@@ -1,5 +1,5 @@
 """Factors of Two in Binomial Coefficients
-FIXME
+FIXME: way way too slow
 Define g(n,m) to be the largest integer k such that 2k divides (nm). For example, (125)=792=23⋅32⋅11, hence g(12,5)=3. 
 Then define F(n)=max{g(n,m):0≤m≤n}. F(10)=3 and F(100)=6.
 
