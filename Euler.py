@@ -1,17 +1,33 @@
+"""
+get_prime_factors(n, primes)
+prime_sieve(n)
+prime_list(n)
+get_unique_prime_factors(n, primes)
+phi(n)
+"""
 from math import prod, factorial
 
-
-def get_prime_factors(n, primes):
+def get_prime_factors(n, primes=None):
     """Returns list of prime factors of n"""
     res = []
-    i = 0
-    while primes[i] <= n**.5:
-        if n % primes[i] == 0:
-            n //= primes[i]
-            res.append(primes[i])
-        else:
-            i += 1
-    res.append(int(n))
+    if primes:
+        i = 0
+        while primes[i] <= n**.5:
+            if n % primes[i] == 0:
+                n //= primes[i]
+                res.append(primes[i])
+            else:
+                i += 1
+        res.append(int(n))
+    else:
+        i = 2
+        while i <= n**.5:
+            if n % i == 0:
+                n //= i
+                res.append(i)
+            else:
+                i += 1
+        res.append(int(n))
     return res
 
 

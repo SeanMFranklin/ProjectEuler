@@ -1,0 +1,8 @@
+graph {
+	"Horse(h)" -- "Offspring(h,h2)"
+	"Horse(h)" -- "Horse(Bluebeard)"
+	"Offspring(h,h2)" -- "Parent(h2,h)"
+	"Horse(Bluebeard)" -- "Offspring(Bluebeard,h2)"
+	"Offspring(Bluebeard,h2)" -- "Parent(h2,Bluebeard)"
+	"Parent(h2,Bluebeard)" -- "Offspring(Bluebeard,h2)"
+}

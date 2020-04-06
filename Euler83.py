@@ -25,7 +25,10 @@ heuristic = [sum(sorted_board[:i]) for i in range(height + width + 2)][::-1]
 # heuristic = res[::-1]
 # print(heuristic)
 
+
 class Path:
+    n_nodes = 0
+
     def __init__(self, f=0, path=[], y=0, x=0, nodes_visited=set()):
         self.cost = board[y, x]
         self.f = f + self.cost
@@ -36,6 +39,7 @@ class Path:
         self.f_plus_h = self.f + self.h
         self.y = y
         self.x = x
+        Path.n_nodes += 1
 
     def __gt__(self, other):
         return self.f + self.h > other.f + other.h
@@ -53,10 +57,16 @@ def insort(queue, node):
 
 def a_star(board):
     queue = [Path()]
-    explored = set()
+    explored = set((0, 0))
+    # plt.axis([0, 80, 0, 80])
     while queue[0].x < width or queue[0].y < height:
         node = queue.pop(0)
         y, x = node.y, node.x
+        # Y = [height - i[0] for i in node.path]
+        # X = [i[1] for i in node.path]
+        # plt.plot(X, Y)
+        # plt.draw()
+        # plt.pause(.001)
         if y < height and (y + 1, x) not in explored:
             insort(queue, Path(node.f, node.path, node.y + 1, node.x, node.nodes_visited))
             explored.add((y + 1, x))
@@ -69,14 +79,14 @@ def a_star(board):
         if y > 0 and (y - 1, x) not in explored:
             insort(queue, Path(node.f, node.path, node.y - 1, node.x, node.nodes_visited))
             explored.add((y - 1, x))
-    print(len(explored))
     return queue[0]
 
 
 ans = a_star(board)
-print(f"Answer: {ans.f}")
+print(f"Answer: {ans.f}\nNodes explored: {ans.n_nodes}")
 
 Y = [height - i[0] for i in ans.path]
 X = [i[1] for i in ans.path]
-plt.plot(X,Y)
+plt.plot(X, Y)
 plt.show()
+

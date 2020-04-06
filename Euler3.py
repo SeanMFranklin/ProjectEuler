@@ -4,9 +4,10 @@ What is the largest prime factor of the number 600851475143 ?"""
 
 n = 600851475143
 d = 2
+
 while d < int(n**.5):
     if n % d == 0:
-        n /= d
+        n //= d
     else:
         d += 1
 

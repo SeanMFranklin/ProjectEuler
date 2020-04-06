@@ -18,7 +18,6 @@ def prime_sieve(n):
                 res[j] = False
     return res
 
-
 is_prime = prime_sieve(int(1000000))
 primes = [i for i in range(len(is_prime)) if is_prime[i]]
 
