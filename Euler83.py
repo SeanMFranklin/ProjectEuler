@@ -62,11 +62,6 @@ def a_star(board):
     while queue[0].x < width or queue[0].y < height:
         node = queue.pop(0)
         y, x = node.y, node.x
-        # Y = [height - i[0] for i in node.path]
-        # X = [i[1] for i in node.path]
-        # plt.plot(X, Y)
-        # plt.draw()
-        # plt.pause(.001)
         if y < height and (y + 1, x) not in explored:
             insort(queue, Path(node.f, node.path, node.y + 1, node.x, node.nodes_visited))
             explored.add((y + 1, x))

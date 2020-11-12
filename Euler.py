@@ -71,3 +71,14 @@ def phi(n):
 def nCr(n, r):
     """Returns n choose r"""
     return int(factorial(n)/(factorial(r)*factorial(n-r)))
+
+def is_prime(n):
+    """Returns T/F, whether n is prime or not"""
+    if n & 1 == 0:
+        return False
+    d = 3
+    while d ** 2 <= n:
+        if n % d == 0:
+            return False
+        d += 2
+    return True
